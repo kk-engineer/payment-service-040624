@@ -20,6 +20,7 @@ public class RazorPayPaymentService implements PaymentGateway {
 
     public String createPaymentLink(String orderId, Long amount)
             throws  RazorpayException{
+        // Source: https://razorpay.com/docs/api/payments/payment-links/create-standard/
         //Order order = orderService.getOrder(orderId)
         //amount = order.getAmount();
         JSONObject paymentLinkRequest = new JSONObject();
