@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class PaymentService {
     private final PaymentGateway paymentGateway;
 
-    PaymentService(@Qualifier("razorpay") PaymentGateway paymentGateway) {
+    PaymentService(@Qualifier("stripe") PaymentGateway paymentGateway) {
         this.paymentGateway = paymentGateway;
     }
 
