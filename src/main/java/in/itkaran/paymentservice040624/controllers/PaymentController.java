@@ -1,5 +1,6 @@
 package in.itkaran.paymentservice040624.controllers;
 
+import com.razorpay.RazorpayException;
 import com.stripe.exception.StripeException;
 import in.itkaran.paymentservice040624.dtos.InitiatePaymentDto;
 import in.itkaran.paymentservice040624.services.PaymentService;
@@ -18,7 +19,7 @@ public class PaymentController {
 
     @PostMapping("/payments")
     public ResponseEntity<String> initiatePayment(@RequestBody InitiatePaymentDto requestDto)
-    throws StripeException {
+    throws StripeException, RazorpayException {
         String paymentLink = paymentService.generatePaymentLink(requestDto.getOrderId(), requestDto.getAmount());
         return ResponseEntity.ok(paymentLink);
     }

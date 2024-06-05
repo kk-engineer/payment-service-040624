@@ -15,7 +15,8 @@ public class StripePaymentService implements PaymentGateway {
     @Value("${stripe.api.secret}")
     private String stripeAPiSecret;
 
-    public String createPaymentLink(String orderId, Long amount) throws StripeException {
+    public String createPaymentLink(String orderId, Long amount)
+            throws StripeException {
         Stripe.apiKey = stripeAPiSecret;
 
         PriceCreateParams priceParams =
